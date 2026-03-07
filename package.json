@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node node_modules/tailwindcss/lib/cli.js -i ./public/src/input.css -o ./public/css/output.css --watch",
-    "start": "nodemon app.js & npm run dev"
+     "start": "node app.js",
   },
   "keywords": [],
   "author": "",
