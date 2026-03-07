@@ -1,0 +1,36 @@
+{
+  "name": "l-10---airbnb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node node_modules/tailwindcss/lib/cli.js -i ./public/src/input.css -o ./public/css/output.css --watch",
+    "start": "nodemon app.js & npm run dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "autoprefixer": "^10.4.24",
+    "nodemon": "^3.1.11",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.4"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.18",
+    "bcrypt": "^6.0.0",
+    "body-parser": "^2.2.2",
+    "connect-mongo": "^3.2.0",
+    "dotenv": "^17.3.1",
+    "ejs": "^4.0.1",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "express-validator": "^7.3.1",
+    "mongodb": "3.6",
+    "mongoose": "^9.1.6",
+    "multer": "^2.0.2",
+    "mysql2": "^3.16.2"
+  }
+}

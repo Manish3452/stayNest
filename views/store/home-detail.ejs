@@ -1,0 +1,114 @@
+<%- include('../partials/head') %>
+</head>
+
+<body class="bg-gray-100">
+  <%- include('../partials/nav') %>
+
+  <!-- Main Container -->
+  <main class="max-w-6xl mx-auto bg-white shadow-xl rounded-xl overflow-hidden mt-10 mb-16">
+
+    <!-- Hero Image Section -->
+    <div class="relative">
+      <img src="<%= home.photo %>" 
+           alt="<%= home.houseName %>" 
+           class="w-full h-[400px] object-cover">
+
+      <!-- Dark Overlay -->
+      <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+      <!-- Overlay Content -->
+      <div class="absolute bottom-8 left-8 text-white">
+        <h1 class="text-4xl font-bold mb-3">
+          <%= home.houseName %>
+        </h1>
+
+        <div class="flex items-center space-x-6 text-lg">
+          <div class="flex items-center">
+            <span class="text-yellow-400 text-xl mr-2">★</span>
+            <span><%= home.rating %> / 5</span>
+          </div>
+
+          <div class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" 
+                 class="h-5 w-5 mr-2" 
+                 fill="none" 
+                 viewBox="0 0 24 24" 
+                 stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                    d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0L6.343 16.657a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            <span><%= home.location %></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Property Details Section -->
+    <div class="p-10">
+
+      <h2 class="text-3xl font-bold mb-8">
+        Property Details
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+        <!-- Left Side -->
+        <div>
+          <h3 class="text-2xl font-semibold mb-3">Description</h3>
+          <p class="text-gray-600 leading-relaxed">
+            <%= home.description %>
+          </p>
+
+          <!-- Download Link -->
+          <div class="mt-6">
+            <a href="/rules/<%= home._id %>" class="text-blue-600 font-medium hover:underline">
+              📄 Download House Rules
+            </a>
+          </div>
+
+          <!-- Favourite -->
+          <div class="mt-6">
+            <%- include('../partials/favourite') %>
+          </div>
+        </div>
+
+        <!-- Right Side -->
+        <div>
+          <h3 class="text-2xl font-semibold mb-4">Features</h3>
+
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-center">
+              <span class="text-green-500 mr-3">✔</span>
+              Prime Location
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-3">✔</span>
+              Highly Rated Property
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-3">✔</span>
+              Modern Amenities
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-3">✔</span>
+              Comfortable Stay
+            </li>
+          </ul>
+
+          <!-- Price -->
+          <div class="mt-8 border-t pt-6">
+            <h3 class="text-2xl font-semibold mb-2">Price</h3>
+            <p class="text-green-600 text-2xl font-bold">
+              $<%= home.price %> / night
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+</body>
+</html>

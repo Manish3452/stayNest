@@ -1,0 +1,51 @@
+<%- include('../partials/head') %>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex flex-col">
+  <%- include('../partials/nav') %>
+
+  <main class="flex-grow max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8 mt-10 mb-16">
+
+    <h1 class="text-3xl font-bold text-center mb-6">
+      House Rules for <span class="text-red-500"><%= home.houseName %></span>
+    </h1>
+
+    <div class="space-y-5 text-gray-700">
+
+      <div>
+        <h2 class="font-semibold text-lg mb-1">1. Check-in / Check-out</h2>
+        <p>Check-in time is after 2 PM and check-out is before 11 AM.</p>
+      </div>
+
+      <div>
+        <h2 class="font-semibold text-lg mb-1">2. No Smoking</h2>
+        <p>Smoking inside the property is strictly prohibited.</p>
+      </div>
+
+      <div>
+        <h2 class="font-semibold text-lg mb-1">3. No Loud Music</h2>
+        <p>Please maintain silence after 10 PM to respect neighbors.</p>
+      </div>
+
+      <div>
+        <h2 class="font-semibold text-lg mb-1">4. Pets Policy</h2>
+        <p>Pets are not allowed unless prior permission is granted.</p>
+      </div>
+
+      <div>
+        <h2 class="font-semibold text-lg mb-1">5. Damage Policy</h2>
+        <p>Guests are responsible for any damage caused during their stay.</p>
+      </div>
+
+    </div>
+
+    <div class="mt-8 text-center">
+      <a href="/homes/<%= home.id %>" 
+         class="bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600 transition">
+         ← Back to Property
+      </a>
+    </div>
+
+  </main>
+</body>
+</html>
