@@ -1,10 +1,9 @@
 <header class="bg-red-500 text-white shadow-md w-full">
-  <nav class="container mx-auto flex justify-between items-center p-4">
+  <nav class="container mx-auto flex justify-between items-center p-2 md:p-4">
     
-    <!-- Left links -->
-    <ul class="flex space-x-4 items-center">
+    <ul class="flex space-x-1 md:space-x-4 items-center">
       <li>
-        <a href="/" class="<%= currentPage === 'index' ? 'bg-red-600' : 'hover:bg-red-600' %> py-2 px-4 rounded transition">
+        <a href="/" class="<%= currentPage === 'index' ? 'bg-red-600' : 'hover:bg-red-600' %> py-2 px-2 md:px-4 rounded transition text-sm md:text-base">
           <i class="fas fa-home mr-1"></i> stayNest
         </a>
       </li>
@@ -12,57 +11,55 @@
       <% if (isLoggedIn) { %>
         <% if (user && user.userType === 'guest') { %> 
         <li>
-          <a href="/homes" class="<%= currentPage === 'home' ? 'bg-red-600' : 'hover:bg-red-600' %> py-2 px-4 rounded transition">
-            <i class="fas fa-list mr-1"></i> Home List
+          <a href="/homes" class="<%= currentPage === 'home' ? 'bg-red-600' : 'hover:bg-red-600' %> py-2 px-2 md:px-4 rounded transition text-xs md:text-base">
+            <i class="fas fa-list mr-1"></i> <span class="hidden sm:inline">Home List</span>
           </a>
         </li>
         <li>
-          <a href="/favourite-list" class="<%= currentPage === 'favourites' ? 'bg-red-600' : 'hover:bg-red-600' %> py-2 px-4 rounded transition">
-            <i class="fas fa-heart mr-1"></i> Favourite
+          <a href="/favourite-list" class="<%= currentPage === 'favourites' ? 'bg-red-600' : 'hover:bg-red-600' %> py-2 px-2 md:px-4 rounded transition text-xs md:text-base">
+            <i class="fas fa-heart mr-1"></i> <span class="hidden sm:inline">Favourite</span>
           </a>
         </li>
         <li>
-          <a href="/bookings-list" class="<%= currentPage === 'bookings' ? 'bg-red-600' : 'hover:bg-red-600' %> py-2 px-4 rounded transition">
-            <i class="fas fa-calendar-check mr-1"></i> Booking
+          <a href="/bookings-list" class="<%= currentPage === 'bookings' ? 'bg-red-600' : 'hover:bg-red-600' %> py-2 px-2 md:px-4 rounded transition text-xs md:text-base">
+            <i class="fas fa-calendar-check mr-1"></i> <span class="hidden sm:inline">Booking</span>
           </a>
         </li>
         <% } else { %>
         <li>
-          <a href="/host/homes-list" class="<%= currentPage === 'hostHomes' ? 'bg-red-600' : 'hover:bg-red-600' %> py-2 px-4 rounded transition">
-            <i class="fas fa-house-user mr-1"></i> Host Home
+          <a href="/host/homes-list" class="<%= currentPage === 'hostHomes' ? 'bg-red-600' : 'hover:bg-red-600' %> py-2 px-2 md:px-4 rounded transition text-xs md:text-base">
+            <i class="fas fa-house-user mr-1"></i> <span class="hidden sm:inline">Host Home</span>
           </a>
         </li>
         <li>
-          <a href="/host/add-home" class="<%= currentPage === 'addHome' ? 'bg-red-600' : 'hover:bg-red-600' %> py-2 px-4 rounded transition">
-            <i class="fas fa-plus-circle mr-1"></i> Add Home
+          <a href="/host/add-home" class="<%= currentPage === 'addHome' ? 'bg-red-600' : 'hover:bg-red-600' %> py-2 px-2 md:px-4 rounded transition text-xs md:text-base">
+            <i class="fas fa-plus-circle mr-1"></i> <span class="hidden sm:inline">Add Home</span>
           </a>
         </li>
         <% } %>
       <% } %>
     </ul>
 
-    <!-- Right profile/logout -->
-    <div class="flex items-center space-x-4">
+    <div class="flex items-center space-x-2 md:space-x-4">
       <% if (isLoggedIn) { %>
-        <div class="relative flex items-center justify-end mr-4 group cursor-pointer">
-          <i class="fas fa-user-circle text-2xl text-white"></i>
-          <!-- Tooltip / name on hover -->
-          <span class="absolute top-full right-0 mt-1 px-3 py-1 text-sm bg-gray-800 text-white rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+        <div class="relative flex items-center justify-end mr-1 md:mr-4 group cursor-pointer">
+          <i class="fas fa-user-circle text-xl md:text-2xl text-white"></i>
+          <span class="absolute top-full right-0 mt-1 px-3 py-1 text-sm bg-gray-800 text-white rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-50">
             <%= user.firstName +' '+ user.lastName %>
           </span>
         </div>
 
         <form action="/logout" method="POST">
-          <button type="submit" class="bg-red-600 hover:bg-red-700 px-3 py-1 border rounded transition">
-            <i class="fas fa-sign-out-alt mr-1"></i> Logout
+          <button type="submit" class="bg-red-600 hover:bg-red-700 px-2 py-1 md:px-3 md:py-1 border rounded transition text-xs md:text-sm">
+            <i class="fas fa-sign-out-alt mr-1"></i> <span class="hidden xs:inline">Logout</span>
           </button>
         </form>
       <% } else { %>
-        <a href="/signup" class="<%= currentPage === 'signup' ? 'bg-red-600' : 'hover:bg-red-600' %> px-3 py-1 rounded transition">
-          <i class="fas fa-user-plus mr-1"></i> SignUp
+        <a href="/signup" class="<%= currentPage === 'signup' ? 'bg-red-600' : 'hover:bg-red-600' %> px-2 py-1 md:px-3 md:py-1 rounded transition text-xs md:text-sm">
+          <i class="fas fa-user-plus mr-1"></i>SignUp
         </a>
-        <a href="/login" class="<%= currentPage === 'login' ? 'bg-red-600' : 'hover:bg-red-600' %> border px-3 py-1 rounded transition">
-          <i class="fas fa-sign-in-alt mr-1"></i> Login
+        <a href="/login" class="<%= currentPage === 'login' ? 'bg-red-600' : 'hover:bg-red-600' %> border px-2 py-1 md:px-3 md:py-1 rounded transition text-xs md:text-sm">
+          Login
         </a>
       <% } %>
     </div>
