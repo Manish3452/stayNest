@@ -4,7 +4,7 @@ const User = require('../models/user');
 exports.getIndex = (req, res, next) => {
   
  Home.find().then(registeredHomes => {
-  res.render('store/index', {registeredHomes: registeredHomes, pageTitle: 'airbnb Home', currentPage: 'index',
+  res.render('store/index', {registeredHomes: registeredHomes, pageTitle: 'stayNest Home', currentPage: 'index',
     isLoggedIn: req.isLoggedIn,
     user: req.session.user,
   });
