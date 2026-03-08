@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "tailwindcss";
+
+/* Ye line Tailwind ko batayegi ki views folder ke andar saari .ejs files ko scan kare */
+@source "../../views/**/*.ejs";
