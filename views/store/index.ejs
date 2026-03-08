@@ -22,7 +22,9 @@
                   <span class="text-gray-700"><%= home.rating %></span>
                 </div>
               </div>
-              <%- include ('../partials/booking', {home: home}) %>
+              <% if(isLoggedIn) { %>
+               <%- include ('../partials/booking', {home: home}) %>
+              <% } %>
             </div>
           </div>
         <% }) %>
